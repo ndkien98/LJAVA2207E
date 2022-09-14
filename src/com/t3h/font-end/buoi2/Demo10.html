@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Box-sizing</title>
+
+    <style>
+        html,body {
+            margin: 0;
+        }
+
+        /* c1 */
+        /*.box {*/
+        /*    width: 68px;*/
+        /*    height: 68px;*/
+        /*    color: white;*/
+        /*    background-color: darkorchid;*/
+        /*    padding: 16px;*/
+        /*    border: 2px solid black;*/
+        /*}*/
+
+        /* c2 */
+        .box {
+            width: 100px;
+            height: 100px;
+            color: white;
+            background-color: darkorchid;
+            padding: 16px;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        Đây là nội dung bài viết
+    </div>
+</body>
+</html>
+
+
+<!--
+    Box-sizing
+    * Vấn đề: chữ hiện tại đang bị sát với viền rất xấu,
+    bh cần tạo ra khoảng cách giữa viền va nội dung bài viết ?
+    làm thế nào ?
+
+    c1: nếu dùng padding cũng có thể tạo ra được khoảng cách
+        => sinh ra vấn đề làm làm tăng kích thước element
+        => mà thiết kế ban đầu chỉ cho 100px nếu thêm vào thì sẽ bị tăng
+    c2: giảm width: 68px, height: 68px
+        => thêm padding: 16 sẽ đảm bảo là 100px
+        lại thêm vấn đề mới là nếu thêm border: 2px => tổng size vẫn tăng
+        -> có thể lại chừ đi cũng được
+
+    => 2 cách này sẽ khá dườm dà
+    => dùng box-sizing
+      - sẽ tự phân chia cho đủ 100px với kích thước ban đầu cho
+      dù có thêm padding hay border,
+      - tự tính toán để bằng kích thước khai báo
+
+        *) nếu trường hợp để padding và border quá lớn ngoài n1gưỡng cho
+        phép => sẽ không giữ nguyên được
+    - các thuộc tính của box-sizing:
+        + content-box: mặc định như khi ko set box-sizing
+        + unset: hủy đi ko dùng box-sizing, dùng khi muốn sửa base của họ
+        đã dùng sẵn mà mình muốn hủy đi
+
+
+
+
+-->

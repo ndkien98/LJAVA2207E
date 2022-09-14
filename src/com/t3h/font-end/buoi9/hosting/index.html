@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+
+    // ex1
+    a = 2;
+    var a;
+    console.log( a );
+    /**
+
+     var a;
+     a = 2;
+     console.log( a );
+
+     */
+
+    //ex 2
+
+    console.log( a1 );
+    var a1 = 2;
+
+    /** that ra doan code chay la
+     var a;
+     console.log( a );
+     a = 2;
+
+     */
+
+    // 3. Hoisting với hàm
+
+    foo();
+    function foo() {
+        console.log( a ); // undefined , vì cũng như ex2
+        var a = 2;
+    }
+
+    /*
+    function foo() {
+    var a;
+    console.log( a ); // undefined
+    a = 2;
+    }
+    foo();
+     */
+
+    // ex2
+    //foo2(); // not ReferenceError, but TypeError!
+    // var foo2 = function bar() {
+    //     // ...
+    // };
+
+    /*
+    foo(); // TypeError
+    bar(); // ReferenceError
+    var foo = function bar() {
+        // ...
+    };
+
+    var foo;
+    foo(); // TypeError
+    bar(); // ReferenceError
+    foo = function() {
+    var bar = ...self...
+    // ...
+    }
+
+     */
+
+    // ex1
+
+    // Gán cho chuỗi NIIT cho biến thuongHieu
+    thuongHieu = "NIIT";
+    // Sử dụng biến thuongHieu
+    console.log(thuongHieu);
+    // Khai báo thuongHieu
+    var thuongHieu;
+
+    // ket qua : NIIT
+
+
+    // ex2
+    // Khai báo và khởi tạo biến thuongHieu
+    var thuongHieu2 = "NIIT";
+
+    // In ra thông tin biến
+    console.log(thuongHieu2 + " thành lập năm: " + namThanhLap); // NIIT thành lập năm: undefined:
+
+    // Khai báo và khởi tạo biến namThanhlap
+    var namThanhLap = 2002;
+
+    // NIIT thành lập năm: 2002 : sai
+    // NIIT thành lập năm: undefined: đúng
+
+
+    /* var thuongHieu2;
+    var namThanhLap
+    thuongHieu2 = "NIIT";
+    // In ra thông tin biến
+    console.log(thuongHieu2 + " thành lập năm: " + namThanhLap); // NIIT thành lập năm: undefined:
+    // Khai báo và khởi tạo biến namThanhlap
+    namThanhLap = 2002;*/
+
+    // ex3
+    // function hoi() {
+    //     console.log(message); // undefined
+    //     var message = "Lập trình JavaScript căn bản";
+    // }
+    hoi();
+
+    function hoi() {
+        var message;
+        console.log(message);
+        message = "Lập trình JavaScript căn bản";
+    }
+
+
+    // hosting với hàm
+
+    // Gọi hàm trước khi khai báo
+   /* hoi2();
+
+    // Khai báo hàm
+    function hoi2() {
+        var message = "Lập trình JavaScript căn bản";
+        console.log(message);
+    }
+
+    */
+
+    // Hàm trên tương ứng với
+    function hoi2() {
+        var message = "Lập trình JavaScript căn bản";
+        console.log(message);
+    }
+
+    // Gọi hàm sau khi khai báo
+    hoi2();
+
+
+    // Biểu thức hàm
+    // Gọi hàm trước
+    /* hoi3();
+
+    // Khai báo, khởi tạo biểu thức hàm
+    var hoi3 = function() {
+        var message = "Lập trình JavaScript căn bản";
+        document.write(message);
+    };
+
+    */
+
+    // var hoi3;
+    // hoi3();
+    // // Khai báo, khởi tạo biểu thức hàm
+    // hoi3 = function() {
+    //     var message = "Lập trình JavaScript căn bản";
+    //     document.write(message);
+    // };
+
+    // khắc phục hosting
+
+    // ex 1
+    // Sử dụng trước khi khai báo
+    console.log(thuongHieu4); // Cannot access 'thuongHieu4' before initialization
+
+    // Khai báo biến sử dụng từ khóa let
+    let thuongHieu4;
+
+</script>
+</html>

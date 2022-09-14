@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script> <!-- su dung link cnd-->
+</head>
+<body>
+<button id="btn">Hello T3h</button>
+<script>
+    // ex 1. cach 1 gan su kien
+    $('#btn').click(function(){
+        // Hành động
+        console.log("hello moi nguoi")
+    });
+</script>
+
+
+<h1 id="title">Chào mừng đến với T3H</h1>
+<script>
+    // ex 2
+    $('#title').on("mousedown",function () {
+        console.log("Lời chào từ T3H")
+    })
+</script>
+
+<input id="result" placeholder="điền tên trường đại học của bạn">
+<script>
+    // ex3 off event
+    function showResult (){
+        console.log("đây là action khi sự kiện chưa được xóa ")
+    }
+
+    $('#result').change(showResult);
+
+    $('#result').off("change");
+</script>
+<br>
+<form>
+    <label><input type="text" placeholder="Email"> </label><br>
+    <label><input type="password" placeholder="Password"> </label><br>
+    <label><input type="submit" value="Sign In"> </label><br>
+</form>
+<script>
+
+    // ex 4: event focus
+    $(document).ready(function () {
+        $("input").focus(function () {
+            console.log($(this).attr('placeholder') + " is focused");
+        });
+    });
+</script>
+
+<script>
+
+    // ex 5: event blur
+    $(document).ready(function () {
+        $("input").blur(function () {
+            console.log($(this).attr('placeholder') + " is blur");
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $("form").submit(function(e){
+            e.preventDefault(); // ngăn chặn reload lại page
+            console.log("submit ")
+        });
+    });
+</script>
+
+</body>
+</html>

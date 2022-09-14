@@ -1,0 +1,27 @@
+
+
+
+.form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.data {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.dataTable{
+    width: 85%;
+    margin: auto;
+}
+
+.right{
+    float: right;
+    margin-right: 8%;
+    margin-bottom: 2%;
+}
+
+p {
+    margin-bottom: 0;
+}

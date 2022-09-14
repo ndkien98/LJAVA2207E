@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+</head>
+<body>
+<h1>jQuery</h1>
+<input type="text" id="id-textbox" value=""/> <br/>
+<input type="button" id="id-button" value="Alert"/>
+<script >
+
+    $('#id-button').click(function()
+    {
+        // Cách 1: Khai báo biến và lấy giá trị
+        // var textbox = $('#id-textbox');
+        // alert(textbox.val());
+
+        // Cách 2: Truy xuất trực tiếp
+        alert($('#id-textbox').val());
+    });
+
+</script>
+</body>
+</html>

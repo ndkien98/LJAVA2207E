@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+
+    const sayHello = function(data) {
+        console.log("Hello World: " + data);
+    }
+
+    sayHello("anh kien");
+
+
+    // ES5
+    var multiply = function(x, y) {
+        return console.log(x * y);
+    };
+
+    // ES6
+    var multiplyAr = (x, y) => { return console.log(x * y) };
+
+    multiplyAr(2,6);
+
+
+    //ES5
+    var phraseSplitterEs5 = function phraseSplitter(phrase) {
+        return phrase.split(' ');
+    };
+
+    //ES6
+    var phraseSplitterEs6 = () => console.log("Love t3h");
+
+    phraseSplitterEs6();
+
+
+    function numberGenerator() {
+        // Local “free” variable that ends up within the closure
+        var num = 1;
+        function checkNumber() {
+            console.log("check number: " + num);
+        }
+        num++;
+
+        return checkNumber;
+    }
+
+    var number = numberGenerator();
+    number(); // 2
+
+
+    // khai báo hàm chính, tham số truyền vào là một biến và một hàm callback
+    function hamA(name, callback) {
+        var myName = name.toUpperCase() + ", Dữ liệu tạo hàm chính";
+        return callback(myName);
+    }
+
+    // gọi tới hàm chính,
+    var result = hamA(
+        "T3h", // truyền vào tham số đầu tiên là name = T3h
+        function (arg) { //tham số thứ 2 là một hàm
+        console.log(arg) // sẽ in ra T3h , Dữ liệu tạo hàm chính
+        arg += "| Dữ liệu được xử lý trong callback";
+        return arg;
+        }
+    );
+    console.log(result);
+
+</script>
+
+
+<script>
+    sayHello();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    /*
+    * Bài 1
+        Viết một hàm JavaScript để kiểm tra xem một `đầu vào` có phải là một chuỗi hay không, tên hàm là: isString
+    * */
+
+    //s1
+    isString = function(input) {
+        if (Object.prototype.toString.call(input) === '[object String]')
+            return true;
+        else
+            return false;
+    };
+
+    //s2
+    isString2 = function(input) {
+        return typeof (input) === 'string';
+    };
+
+    // Bai 2 Viết một hàm JavaScript để chuyển đổi một chuỗi sang dạng viết tắt với dạng Robin Singh -> Robin S
+    shortName = (input) => {
+        var arr = input.split(" ");
+        if(arr.length > 1){
+            var result = arr[0];
+            for (let i = 1; i < arr.length; i++) {
+                result = result + " " + arr[i].charAt(0);
+            }
+            return  result + "."
+        }
+        return arr[0];
+    }
+
+    console.log(shortName("Nguyen thi van anh"));
+
+    // Bai 5 Viết hàm JavaScript để ẩn địa chỉ email nhằm bảo vệ khỏi người dùng trái phép Test Data:
+    // console.log(protect_email("robin_singh@example.com"));
+    // "robin...@example.com"
+
+    protectEmail = (input) => {
+        var arrStr = input.split("@");
+        var part1 = arrStr[0];
+        var part2 = arrStr[1];
+        part1 = part1.substr(0,part1.length / 2);
+        return part1 + "...@" + part2
+    }
+
+    console.log(protectEmail("ndkien98@gmail.com"));
+
+    // bai 6 Viết một hàm JavaScript để viết hoa chữ cái đầu tiên của một chuỗi
+    // console.log(capitalize('js string exercises'));
+    // "Js string exercises"
+
+    upperCaseFirst = (input) => {
+        return input.charAt(0).toUpperCase() + input.slice(1);
+    }
+
+    console.log(upperCaseFirst("t3h"));
+
+    // Bài 7 Viết một hàm JavaScript để chèn một chuỗi trong một chuỗi ở một vị trí cụ thể (mặc định là 0)
+    /*
+    Test Data :
+    console.log(insert('We are doing some exercises.'));
+    console.log(insert('We are doing some exercises.','JavaScript '));
+    console.log(insert('We are doing some exercises.','JavaScript ',18));
+    "We are doing some exercises."
+    "JavaScript We are doing some exercises."
+    "We are doing some JavaScript exercises."
+     */
+
+    insert = (str,value = '',position = 0) => {
+        if(value === '' && position === 0) return str;
+
+        var part1 = str.substr(0,position);
+        var part2 = str.substr(position,str.length);
+        return part1 + value + part2;
+    }
+    console.log(insert('We are doing some exercises.'));
+    console.log(insert('We are doing some exercises.','JavaScript '));
+    console.log(insert('We are doing some exercises.','JavaScript ',18));
+
+    /*
+    Bài 8
+    Viết một hàm JavaScript để tìm sự khác biệt của hai mảng.
+    Test Data :
+    console.log(difference([1, 2, 3], [100, 2, 1, 10]));
+    ["3", "10", "100"]
+    console.log(difference([1, 2, 3, 4, 5], [1, [2], [3, [[4]]],[5,6]]));
+    ["6"]
+    console.log(difference([1, 2, 3], [100, 2, 1, 10]));
+    ["3", "10", "100"]
+     */
+
+    function differenceOf2Arrays (array1, array2) {
+        var temp = [];
+        // biến thành 1 mảng object
+        array1 = array1.toString().split(',').map(Number);
+        array2 = array2.toString().split(',').map(Number);
+
+
+        for (var i in array1) {
+            var valueA1 = array1[i]; // lay ra phan tu thu i cua arr1
+            var valueA2 = array2.indexOf(valueA1); // tim kiem phan tu day trong arr2, indexOf neu co tra ve phan tu, neu khong tra ve -1
+            if( valueA2 === -1) {
+                temp.push(array1[i]); // == -1 tuc phan tu day ton tai trong arr1 ma ko ton tai trong arr2 => lay vao
+            }
+        }
+
+        // tuong tu kiem tra nhu voi arr1
+        for(i in array2) {
+            if(array1.indexOf(array2[i]) === -1) {
+                temp.push(array2[i]);
+            }
+        }
+        return temp;
+    }
+    console.log(differenceOf2Arrays([1, 2, 3], [100, 2, 1, 10]));
+    console.log(differenceOf2Arrays([1, 2, 3, 4, 5], [1, [2], [3, [[4]]],[5,6]]));
+    console.log(differenceOf2Arrays([1, 2, 3], [100, 2, 1, 10]));
+
+    /*
+    Bài 9
+    Viết chương trình JavaScript để tìm một cặp phần tử (chỉ số của hai số) từ một mảng nhất định có tổng của nó bằng một số mục tiêu cụ thể.
+    Input: numbers= [10,20,10,40,50,60,70], target=50
+    Output: 2, 3
+     */
+
+    function twoSum2(arr,target){
+        let result = [];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i+1; j < arr.length; j++) {
+                if (arr[i] + arr[j] === target){
+                    let subResult = [];
+                    subResult.push(i);
+                    subResult.push(j);
+                    result.push(subResult);
+                    break;
+                }
+            }
+        }
+
+        return result;
+
+    }
+
+
+    console.log(twoSum2([10,20,10,40,50,60,70],50));
+
+    /**
+     Bài 10
+     Viết một hàm JavaScript để lấy phần tử lớn thứ n từ một mảng chưa được sắp xếp.
+     Test Data :
+     console.log(nthlargest([ 43, 56, 23, 89, 88, 90, 99, 652], 4));
+     89
+
+     */
+
+    function nthlargest(arr,index){
+        for (let i = 0; i < arr.length -1; i++) {
+            for (let j = i+1; j < arr.length; j++) {
+                if(arr[i] > arr[j]){
+                    let term = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = term;
+                }
+            }
+        }
+
+        return arr[index];
+    }
+
+    console.log(nthlargest([ 43, 56, 23, 89, 88, 90, 99, 652], 4));
+</script>
+</html>

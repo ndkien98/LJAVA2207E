@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Margin</title>
+
+    <style>
+        *{
+            margin: 0;
+        }
+        .box{
+            width: 60px;
+            height: 60px;
+            color: white;
+            /* căn giữa data */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* ban đầu sẽ ko có, đến đoạn giải thích tính chất 2 thì sẽ thêm vào*/
+            /*float: left;*/
+        }
+
+        .box1{
+            background-color: #333;
+        }
+
+        .box2{
+            background-color: orange;
+        }
+
+        .box3{
+            background-color: firebrick;
+            margin: 10px 20px 30px 40px
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="box box1">Box1</div>
+<div class="box box2">Box2</div>
+<div class="box box3">Box3</div>
+</body>
+</html>
+
+<!--
+    Margin
+
+    * padding và border chỉ làm element giày hơn
+    => không giải quyết được bài toán khi muốn khoảng cách giửa element
+    => Margin không làm tăng kích thước của element
+    => đấy là lý do tại sao margin ở ngoài
+
+    * Tính chất thứ 2:
+        + thêm thuộc tính  float: left; đẩy 3 box cùng hàng ngang
+        + khi tăng margin left của box3 vợt quá khung hình nó sẽ đẩy box 3 xuống dưới
+        => tu duy hình hộp thông thường nếu tổng kích thước nó vượt quá sẽ
+        cho 1 thằng xuống dưới
+
+    * Viết ngắn gọn
+        margin 10px: đẩy margin cả 4 hướng
+        margin 10px 20px:
+            + trên, dưới => 10
+            + trái, phải => 20
+        margin: 10px 20px 30px
+            + trên: 10
+            + trái, phải => 20
+            + dưới => 30
+       margin: 10px 20px 30px 40px
+        chạy theo kim đồng hồ
+            + trên: 10
+            + phải: 20
+            + dưới: 30
+            + trái: 40
+
+-->

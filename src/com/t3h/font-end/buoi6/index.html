@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+</body>
+<script>
+    /**
+     * Đề bài: Cho một mảng n số nguyên. Kiểm tra xem mảng có tăng dần không. Mảng tăng dần là mảng mà số sau lớn hơn số trước.
+     * Nếu mảng tăng dần in ra “TRUE”, nếu không in ra “FALSE”.
+     */
+    function main() {
+        const input = prompt("Nhập dãy số nguyên, ngăn cách bằng dấu cách", 0)
+        // Split là hàm tách chuỗi thành mảng
+        // chi tiết xem tại: https://phambinh.net/bai-viet/cac-ham-lam-viec-voi-string-trong-javascript/#split
+        const numbers = input.split(' ').map(Number)
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] >= numbers[i + 1]) {
+                console.log('FALSE')
+                return
+            }
+        }
+
+        console.log('TRUE')
+    }
+    main()
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    function reverseString(str){
+
+        if (str === "") return "";
+
+        return reverseString(str.substr(1)) + str.charAt(0);
+    }
+
+    var data = reverseString("hello");
+    console.log(data);
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<table  id="tableData">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Email</th>
+        <th scope="col">Giới tính</th>
+        <th scope="col">Tên</th>
+        <th scope="col">Trạng thái</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<button >Send an HTTP GET request to a page and get the result back</button>
+<script>
+    // cu phap get
+    // $.get(URL,callback);
+    $(document).ready(function (){
+        $('button').on('click',function (){
+            $.get("https://salty-anchorage-90590.herokuapp.com/user",function (data){
+                console.log(data);
+                for (let i = 0; i < data.length; i++) {
+                    let htmlRow = '<tr>\n' +
+                        '            <td> ' + data[i].id +' </td>\n' +
+
+                        '            <td>' + data[i].email + ' </td>\n' +
+                        '            <td>' +data[i].gender + '</td>\n' +
+                        '            <td>' + data[i].name + '</td>\n' +
+                        '            <td>' + data[i].status + '</td>\n' +
+                        '        </tr>'
+                    $('table > tbody').append(htmlRow);
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

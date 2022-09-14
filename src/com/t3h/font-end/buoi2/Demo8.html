@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Border</title>
+
+    <style>
+        *{
+            margin: 0;
+        }
+        .box{
+            width: 60px;
+            height: 60px;
+            color: white;
+            /* căn giữa data */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box1{
+            background-color: #333;
+        }
+
+        .box2{
+            background-color: orange;
+            border: 10px solid ;
+        }
+
+        .box3{
+            background-color: firebrick;
+            padding: 10px;
+            border-top-width: 2px;
+            border-left-width: 5px;
+            border-right-width: 10px;
+            border-bottom-width: 15px;
+            border-style: solid; /*  nét liền, mặc định solid có border là 2px */
+            border-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="box box1">Box1</div>
+<div class="box box2">Box2</div>
+<div class="box box3">Box3</div>
+</body>
+</html>
+
+<!--
+
+   Border
+    - chỉ ra phần border trong f12
+
+    => cả padding của border đều làm tăng tổng kích thước của element
+
+
+
+-->
