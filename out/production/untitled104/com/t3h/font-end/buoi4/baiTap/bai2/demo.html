@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Học web chuẩn</title>
+  <style>
+    /* Reset */
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    body{
+        
+        font-family: Helvetica,sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* layout*/
+
+    .main{
+        margin: 30px auto;
+        width: 940px;
+    }
+
+    .main h2{
+        font-size: 26px;
+        margin-bottom: 30px;
+        position: relative;
+        text-align: center;
+    }
+
+    /* tao ra phan backgroud de che dong line chạy qua chư */
+   .main h2 span{
+        background-color: aqua;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+   }
+
+   /*Line cua h2*/
+   .main h2::after {
+        background-color: #383838;
+        content: "";
+        display: block;
+        height: 1px;
+        
+        position: absolute;
+        left: 0;
+        top: 20px;
+        width: 100%;
+        
+   }
+
+   .main .content li{
+        float: left;
+        margin-right: 20px;
+        
+   }
+    
+  </style>
+</head>
+<body>
+<div class="main">
+    <h2><span>Great examples built with bootslander</span></h2>
+    <ul class="content">
+        <li>
+            <a href="./"><img src="img/img_215x130.png"></a>
+        </li>
+        <li>
+            <a href="./"><img src="img/img_215x130.png"></a>
+        </li>
+        <li>
+            <a href="./"><img src="img/img_215x130.png"></a>
+        </li>
+        <li>
+            <a href="./"><img src="img/img_215x130.png"></a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    /* px */
+    .box{
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+
+    .h1{
+        font-size: 40px;
+    }
+    /* % */
+    .box2{
+        width: 50%;
+        height: 100px;
+        background: blue;
+    }
+    /* rem*/
+    html{
+        font-size: 10px;
+    }
+
+    #idRem{
+        font-size: 4rem;
+    }
+
+    #idVW{
+        width: 50vw;
+        height: 10vw;
+        background: crimson;
+    }
+
+</style>
+<body style="width: 500px">
+    <div class="box"></div>
+    <div class="box2"></div>
+    <h1>Đơn vị</h1>
+
+    <h1>px</h1>
+    <h1 id="idRem">REM</h1>
+    <div>
+        <h1 id="idEm"> EM</h1>
+    </div>
+    <div id="idVW"></div>
+</body>
+</html>
+
+<!--
+   Đơn vị trong css
+
+    1: absolute units ( đơn vị tuyệt đối)
+        - px
+            + với màn hình độ phân giải thấp thì
+                1 px sẽ chiếm 1 điểm ảnh, với màn hình
+                độ phân giải cao thì chiếm nhiều điểm ảnh hơn
+            + kích thước luôn cố định
+        - pt
+        - cm
+        - mm
+        - inch
+        - pc
+
+    2: Relative units ( đơn vị tương đối)
+        - %
+            + đơn vị tương đối và luôn phụ thuộc vào 1 kích thước nào đó
+            để xác định được đơn vị %
+            + sở hữu kích thước ko cố định
+            + phụ thuộc vào thẻ chứa nó
+        - rem
+            + phụ thuộc vào html,
+            + ứng dụng khi mà muốn cài đặt nó để nó ảnh hưởng được tới
+            tất cả các element thay vì đi sửa từng css của element
+        - em
+            + Chỉ phụ thuộc vào thẻ cha gần nhất, vì thẻ dev chưa có
+            font-size => nó tiếp tục tìm dần dần cho đến thẻ html => nó nhận
+             font-size = 10px, nếu dev có font-size => nó sẽ ăn theo dv
+             => ngta hay dùng rem hơn em
+        - vw
+            + vw - width: lấy theo bao nhiêu phần trăm của chiều rộng của cả màn hình
+            + vh - height: lấy theo số lượng phần trăm chiều cao của cả màn hình
+            * note:
+                + nó khác với % vì % lấy theo số % của thẻ cha chứa nó
+                + còn với cái này thì cứ lấy theo số đo của cả màn hình
+-->

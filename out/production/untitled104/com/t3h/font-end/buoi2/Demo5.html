@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Độ ưu tiên trong css</title>
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+        #id2 {
+            color: black;
+        }
+
+        .class2{
+            color: blue;
+        }
+
+        h2{
+            color: red;
+        }
+
+        #idEQ.classEQ{
+            color: red;
+        }
+
+        h2#idEQ.classEQ{
+            color: chartreuse;
+        }
+
+        * {
+            color: red;
+        }
+
+        #u {
+            color: black;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <h1> Độ ưu tiên</h1>
+    <h2 id="id2" class="class2" style="color: red">Data test</h2>
+    <h2 id="idEQ" class="classEQ">Equal specificity</h2>
+
+    <h3 id="u">Universal selector</h3>
+    <h3> inherited</h3>
+</body>
+
+<style>
+    #id2{
+        color: #686de0 !important;
+    }
+
+</style>
+</html>
+<!--
+    Mức độ ưu tiên
+    - 1: Internal và External
+        + không có cái nào ưu tiên hơn cả, cái nào được
+        load mới hơn sẽ được ưu tiên hơn nếu ở cùng mức độ select
+        vd: viết code trong file và viết code ngoài file
+    - 2: inline - 1000
+    - 3: #id - 100
+    - 4.class - 10
+    - 5. tag - 1
+        => vd bằng cách đưa các css vào cùng 1 element
+        chỉ khác nhau cách selector
+        => cho dù đặt trc hay sau thì cũng đều tuần theo số điểm kia
+
+    - 6: Equal specificity ?
+        + Sự giống nhau khi gọi tới 1 element giống nhau
+        => nếu chỉ đơn thuần là cùng 1 loại select thì css nào sau sẽ thắng
+        => nếu #idEQ.classEQ tức là cộng select cộng thêm cả id và class => cái nào trọng số nhiều điểm hơn theo cái kia sẽ thắng và dùng css cái đấy
+
+    - 7: Universal selector and inherited
+        + Universal selector: ảnh hưởng tới tất cả các element trong document
+            -> cái này có điểm bằng 0 thất nhất trong tất cả các loại
+        + inherited: css kế thừa
+    - 8: important
+        => mạnh nhất
+
+-->

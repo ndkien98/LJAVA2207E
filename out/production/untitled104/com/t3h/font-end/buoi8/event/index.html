@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<button id="btn" onclick="myFunction()">Click vào đây</button>
+<script>
+    // ex 1
+  function myFunction() {
+    alert("Bạn đã click vào một phần tử trong HTML DOM");
+  }
+
+    // event onload
+    alert(1);
+
+    window.onload = function()
+    {
+        alert(3);
+    };
+
+    alert(2);
+</script>
+
+<h2 id="ex2">Đưa con trỏ chuột vào đây</h2>
+<script>
+    document.getElementById("ex2").onmouseover = function (e) {
+        document.getElementById("ex2").style.color = "red";
+    }
+</script>
+
+<ul>
+    <li class="menu">JAVA</li>
+    <li class="menu">JAVASCRIPT</li>
+    <li class="menu">PHP</li>
+    <li class="menu">PYTHON</li>
+</ul>
+<script>
+    //ex3
+    let data = document.getElementsByClassName("menu");
+
+    for (let i = 0; i < data.length; i++) {
+
+        // Lắng nghe sự kiện click
+        // và đổi màu chữ thành màu đỏ
+        data[i].onclick = function() {
+            this.style.color = "red";
+        };
+    }
+</script>
+
+
+<button id="ex4">Nhấn vào đây</button>
+
+<script>
+
+    document.method().events = function() {
+        // Khối lệnh thực thi
+    }
+
+
+</script>
+
+</body>
+</html>

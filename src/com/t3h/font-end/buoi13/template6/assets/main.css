@@ -19,7 +19,7 @@
 
     /* reset pading cua li */
     padding-left: 0;
-    margin-top: 4px;
+    margin: 4px 0 0 0;
 }
 
 .header__navbar-item{
@@ -62,7 +62,7 @@
     transform: translateY(-50%);
 }
 
-
+/* di chuat vao cac chu */
 .header__navbar-item:hover,
 .header__navbar-item-link:hover{
     /* khi di chuot vao ti doi mau chu */
@@ -70,4 +70,41 @@
 
     /* di chuat vao dien ban tay */
     cursor: pointer;
+}
+
+
+/* header with search */
+.header-with-search{
+    height: 86px;
+
+    /* can giua chieu cao cua header */
+    display: flex;
+    align-items: center;
+}
+
+.header__logo{
+    width: 200px;
+}
+
+.header__logo-img{
+    width: 120px;
+}
+
+.header__search{
+    /* ve ra o search */
+    flex: 1;
+    height: 40px;
+    background-color: var(--white-color);
+}
+
+.header__card{
+    width: 150px;
+    /* can giua logo */
+    text-align: center;
+}
+
+.header-cart-icon{
+    font-size: 2.4rem;
+    color: var(--white-color);   
+    margin-top: 9px;
 }

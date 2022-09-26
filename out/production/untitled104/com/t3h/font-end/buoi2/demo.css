@@ -1,0 +1,60 @@
+/*
+   - màu
+        + kiểu chữ viết chữ ( không có màu chính xác)
+        + kiểu mã màu
+        + rgb: xác tố tổ hợp của 3 màu
+        + rgba: thể hiện độ trong suốt của màu
+            => degine thường đưa các mã này
+    - nền
+    - kích cỡ
+        + px
+        + em: là đơn vị tương đối
+    - font-chữ
+    - Chỉnh sửa text
+    - display
+        - inline: là 1 dòng liền nhau
+        - block: là các code có thể xuống dòng
+    - box model
+        + khoảng cách giữa các phần tử với các khối
+        + padding: khoảng cách giữa data và các viền bên trong
+        + margin
+    - wihth, height, overflow ( controll khi data bên trong chàn khỏi wihth, height)
+    - box sizing
+    - position: set vị trí của các element
+    - float:
+
+ */
+
+
+
+/*h1 {*/
+/*    color: rgb(142,68,173);*/
+/*    border: 1px solid red;*/
+/*}*/
+
+/*html{*/
+/*    background: url("https://img.freepik.com/free-vector/retro-grunge-background-with-circles_1048-1098.jpg?w=740&t=st=1657944458~exp=1657945058~hmac=f5cb70a3570d7419eae004ad70a0c0d9495934fb9bdd75120c05ad5aeaa61d9b");*/
+/*    background-size: cover;*/
+/*}*/
+
+body{
+    font-family: 'Merriweather'; /* https://fonts.google.com/?subset=vietnamese */
+}
+h1,h2,p {
+    margin-top: 0; /* bỏ hết mar */
+}
+
+#top {
+    background-color: #686de0; /*https://flatuicolors.com/palette/au */
+    text-align: center;
+}
+
+p {
+    margin-bottom: 10px;
+}
+h1 {
+    color: red;
+}
+
+
+

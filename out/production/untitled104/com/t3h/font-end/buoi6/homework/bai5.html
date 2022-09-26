@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai5</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="bai5.js"></script>
+    <style>
+        form{
+            display: inline-block;
+            width: 520px;
+            border: 1px black solid;
+            padding: 5px 2px 2px 5px;
+            margin-left: 10px;
+        }
+        .row label{
+            display: inline-block;
+            width: 200px;
+            border: 1px black solid;
+            margin-left: 10px;
+            margin-right: 8px;
+        }
+        .row .col-sm-10{
+            display: inline-block;
+            width: 300px;
+            border: 1px black solid;
+            padding-top: 6px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div class="row mb-3">
+          <label for="hoTen" class="col-sm-2 col-form-label">Tên đăng nhập:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="hoTen" placeholder="Nhập tối thiểu 5 ký tự" autofocus/>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="inputPassword" class="col-sm-2 col-form-label">Mật khẩu:</label>
+            <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Nhập tối thiểu 8 ký tự">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Nhập lại mật khẩu:</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword3">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="phoneEdit" class="col-sm-2 col-form-label">Phone:</label>
+            <div class="col-sm-10">
+              <input type="tel" class="form-control" id="phoneEdit" placeholder="Nhập là những con số và 10 ký tự">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Email:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail" placeholder="admin2101@gmail.com">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="diachi_edit" class="col-sm-2 col-form-label">Địa chỉ:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="diachi_edit">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label  class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Đăng ký</button>
+            </div>
+          </div>
+        
+      </form>
+</body>
+</html>

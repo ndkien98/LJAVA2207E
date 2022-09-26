@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<table  id="tableData">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Email</th>
+        <th scope="col">Giới tính</th>
+        <th scope="col">Tên</th>
+        <th scope="col">Trạng thái</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<button >Send an HTTP POST request to a page and get the result back</button>
+<script>
+    $(document).ready(function (){
+        $.ajaxSetup({ // set up content json để gửi lên server
+                'headers':{
+                    'Content-Type':'application/json',}})
+        $('button').on('click',function (){
+            let data = {}; // tạo ra object dữ liệu gửi lên server
+            data.id = 1111111111111111111;
+            data.name = 'kiennd';
+            data.gender = 'Nam';
+            data.status = 'active';
+            data.email = 'email.com';
+            // truyền dữ liệu lên server
+            $.post("https://salty-anchorage-90590.herokuapp.com/user",JSON.stringify(data),function (data, status){
+                console.log(data + " status: " + status); // hiển thị ra dữ liệu khi gọi thành công
+                for (let i = 0; i < data.length; i++) { // append dữ liệu vào bảng
+                    let htmlRow = '<tr>\n' +
+                        '            <td> ' + data[i].id +' </td>\n' +
+
+                        '            <td>' + data[i].email + ' </td>\n' +
+                        '            <td>' +data[i].gender + '</td>\n' +
+                        '            <td>' + data[i].name + '</td>\n' +
+                        '            <td>' + data[i].status + '</td>\n' +
+                        '        </tr>'
+                    $('table > tbody').append(htmlRow);
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

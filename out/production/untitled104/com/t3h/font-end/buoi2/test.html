@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Box-sizing</title>
+
+    <style>
+        html,body {
+            margin: 0;
+        }
+
+        /* c1 */
+        /*.box {*/
+        /*    width: 68px;*/
+        /*    height: 68px;*/
+        /*    color: white;*/
+        /*    background-color: darkorchid;*/
+        /*    padding: 16px;*/
+        /*    border: 2px solid black;*/
+        /*}*/
+
+        /* c2 */
+        .box {
+            width: 100px;
+            height: 100px;
+            color: white;
+            background-color: darkorchid;
+            padding: 16px;
+            border: 2px solid black;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    Đây là nội dung chính
+</div>
+</body>
+</html>

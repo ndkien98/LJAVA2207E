@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+
+    <link href="index.css" rel="stylesheet">
+    <script src="index.js"></script>
+
+</head>
+<body>
+    
+    <div class="content">
+
+        <div class="fromSearch">
+
+            <div class="form">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <label>Loại ngoại tệ</label>
+                            <select id="Loai_ngoai_te" class="form-select" aria-label="Default select example">
+                                <option value="">--Chọn ngoại tệ--</option>
+                                <option value="c1">VNĐ</option>
+                                <option value="c2">USD</option>
+                            </select>
+
+                        </div>
+                        <div class="col-sm">
+                            <label>Trạng thái</label>
+                            <select id="Trang_thai" class="form-select" aria-label="Default select example">
+                                <option value="">--Chọn trạng thái--</option>
+                                <option value="t1">Chấp nhận</option>
+                                <option value="t2">Từ chối</option>
+                            </select>
+                        </div>
+                        <div class="col-sm">
+                            <label>Chi nhánh</label>
+                            <select id="Ten_chi_nhanh" class="form-select" aria-label="Default select example">
+                                <option value="">--Chọn chi nhánh--</option>
+                                <option value="b1">Hà Nội</option>
+                                <option value="b2">Hồ Chí Minh</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <label>Tìm kiếm theo ngày</label>
+                            <select id="Ngay_dang_ki_nhan_tien" class="form-select" aria-label="Default select example">
+                                <option value="">--Chọn ngày--</option>
+                                <option value="d1">Ngày gửi đăng ký</option>
+                                <option value="d2">Ngày kiểm soát viên duyệt</option>
+                            </select>
+                        </div>
+                        <div class="col-sm">
+                            <label>Từ ngày</label>
+                            <input type="date" class="form-control" placeholder="từ ngày" id="fromDate" >
+                        </div>
+                        <div class="col-sm">
+                            <label>Đến ngày</label>
+                            <input type="date" class="form-control" placeholder="đến ngày" id="toDate" >
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+
+        </div>
+
+        <div class="data">
+            <div class="dataTable">
+                <div>
+                    <button type="button" onclick="searchData()" class="btn btn-light">Tìm kiếm</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-light">Xuất file excel</button>
+                </div>
+                <table id="idTable" class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">BDS</th>
+                        <th scope="col">Tên chi nhánh</th>
+                        <th scope="col">Số ngoại tệ mua</th>
+                        <th scope="col">Loại ngoại tệ</th>
+                        <th scope="col">Ngày đăng ký nhận tiền</th>
+                        <th scope="col">Trạng thái</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                    </tbody>
+                  </table>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>

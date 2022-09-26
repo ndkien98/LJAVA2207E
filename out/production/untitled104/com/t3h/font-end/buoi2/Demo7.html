@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Padding</title>
+
+    <style>
+        *{
+            margin: 0;
+        }
+        .box{
+            width: 60px;
+            height: 60px;
+            color: white;
+            /* căn giữa data */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box1{
+            background-color: #333;
+        }
+
+        .box2{
+            background-color: orange;
+            padding: 10px 12px 8px 6px;
+        }
+
+        .box3{
+            background-color: firebrick;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box box1">Box1</div>
+    <div class="box box2">Box2</div>
+    <div class="box box3">Box3</div>
+</body>
+</html>
+
+<!--
+
+    - box model
+
+    - show demo cái box model
+
+    - mở f12 show box model ban đầu khi chưa set padding thì tổng kích thước
+    chỉ 60 x 60
+        => sau khi thêm 10px cho padding =. tổng size = 60 x 70 do có thêm 10px padding
+    * cách viết gọn
+        + khi chỉ điền vào 1 giá trị
+            padding: 10px => cộng 10 px vào cả 4 phía
+        + padding: 10px 12px
+            => tăng 10px cho phái trên và dưới
+            => tăng 12px cho phía phải và trái
+        + padding: 10px 12px 8px
+            => tăng 10px cho phái trên
+            => tăng 12px cho phía phải và trái
+            => 8px tăng bên dưới
+
+        + padding: 10px 12px 8px 6px ( tăng theo chiều kim đồng hồ)
+            => tăng 10px cho phái trên
+            => tăng 12px cho phía phải
+            => 8px tăng bên dưới
+            => 6x tăng phía bên trái
+
+-->

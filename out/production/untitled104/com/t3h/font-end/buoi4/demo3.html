@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    https://ionic.io/ionicons-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .wapper{
+        width: 100%;
+        height: 400px;
+        background-color: black;
+        color: white;
+        margin: 20px;
+        padding: 25px;
+        position: relative;
+    }
+
+    .boxed {
+        width: 100px;
+        height: 100px;
+        background-color: #686de0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .box2 {
+        background-color: white;
+    }
+
+    .box3 {
+        background-color: red;
+    }
+
+    .dropdown{
+        width: 300px;
+        font-size: 18px;
+    }
+
+    .dropdown-select{
+        width: 100%;
+        height: 40px;
+
+        /* cách icon ra xa */
+        display: flex;
+        justify-content: space-between;
+        /* cho text o giua*/
+        align-items: center;
+
+        padding: 0 20px;
+        border: 1px solid #e1e0e0;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .dropdown-list{
+        border: 1px solid #e1e0e0;
+        margin-top: 20px;
+        display: none;
+    }
+
+    .dropdown-items {
+        padding: 20px;
+        border-bottom: 1px solid #e1e0e0;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .dropdown:hover .dropdown-list{
+        display: block;
+    }
+
+</style>
+<body>
+
+<div class="wapper">
+    <div class="boxed box1">
+
+    </div>
+    <div class="boxed box2">
+
+    </div>
+    <div class="boxed box3">
+
+    </div>
+    <p>Phần tử sẽ nằm một chỗ cố định đối với khung nhìn, tức là cho dù ta có kéo thanh scroll lên xuống hay qua trái phải thì vị trí của nó vẫn không thay đổi.</p>
+</div>
+
+<div class="dropdown">
+    <div class="dropdown-select">
+        <span>HTML</span>
+        <ion-icon name="caret-down-outline"></ion-icon>
+    </div>
+    <div class="dropdown-list">
+        <div class="dropdown-items">Css</div>
+        <div class="dropdown-items">Java</div>
+        <div class="dropdown-items">C#</div>
+        <div class="dropdown-items">.Net</div>
+    </div>
+</div>
+<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+
+
+</body>
+</html>
+
+

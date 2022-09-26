@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Học javascript tại freetuts.net</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="all.js"></script>
+    <style>
+        span{
+            color:red;
+            display: block;
+            padding: 5px 0px;
+        }
+    </style>
+</head>
+<body style="margin: 50px;">
+<form method="post" action="" id="loginform">
+    <table border="1" cellpadding="10">
+        <tr>
+            <td>Tên đăng nhập: </td>
+            <td>
+                <input type="text" id="username" name="username" value=""/>
+                <span id="username_error"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Mật khẩu: </td>
+            <td>
+                <input type="text" id="password" name="password" value=""/>
+                <span id="password_error"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Nhập lại mật khẩu: </td>
+            <td>
+                <input type="text" id="repassword" name="repassword" value=""/>
+                <span id="repassword_error"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Phone: </td>
+            <td>
+                <input type="text" id="phone" name="phone" value=""/>
+                <span id="phone_error"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Email </td>
+            <td>
+                <input type="text" id="email" name="email" value=""/>
+                <span id="email_error"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Địa chỉ </td>
+            <td>
+                <input type="text" id="address" name="address" value=""/>
+                <span id="address_error"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+
+                <input type="submit" onclick="return validate();" id="btn" name="btn" value="Đăng ký"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+
+<!--https://freetuts.net/validate-form-bang-javascript-co-ban-3418.html-->

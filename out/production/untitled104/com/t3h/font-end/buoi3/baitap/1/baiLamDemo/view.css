@@ -1,0 +1,95 @@
+/*
+
+    * Công thức chung
+        - đối với class lên sử dụng .class tránh sử dụng
+            tag.class => vì nếu tag thay đổi sẽ ảnh hướng tới css
+        - Thứ tụ viết CSS
+            + css từ trên xuống
+            + sắp xếp vị trí css cho các thành phần từ ngoài vào
+                => .class ông => .class cha => .class con
+            + sắp xếp vị trí từng thành phần trc rồi mới trang trí
+                bên trong
+            + chỉnh lại vị trí chính xác các element ngoài và trong
+
+        - Trong thực tế sẽ được cấp font chữ, mã màu, không cần
+            phải 100% đúng với mã màu của bài
+
+*/
+
+/* Rest */
+/* html mặc định sẽ có các thông số cho box-model => lên cần reset để dễ control */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    body{
+        /*color: #333;  */
+        font-family: Helvetica,sans-serif;
+        font-size: 16px;
+    }
+
+    /*layout*/
+    .content {
+        margin: 20px; /*margin: để set khoảng cách xung xanh, với cả header  */
+        text-align: center; /* Căn giữa content */
+        /*width: 800px;*/
+    }
+
+    .logo{
+        /* Tạo khoảng cách với nội dung bên dưới */
+        margin-bottom: 15px;
+    }
+
+    .content h2 {
+        /* Cho chữ to lên đúng như yêu cầu */
+        font-size: 45px;
+        /* Không tin đậm các chữ xung quanh */
+        font-weight: normal;
+
+        margin-bottom: 25px;
+    }
+
+    .content h2 strong {
+        color: #00aeef;
+        /*font-weight: 600;*/
+    }
+
+    .lead-text {
+        margin-bottom: 40px;
+    }
+
+    /* cho các button ra giữa */
+    .btn-list {
+        text-align: center;
+    }
+
+    .btn-list li {
+        /* Hiển thị chiều ngang */
+        display: inline;
+        margin: 0 12px;
+    }
+
+    .btn-list li a {
+        background-color: #2d3032;
+
+        /* Cho có viền bo tròn 4 góc  */
+        border-radius: 4px;
+        color: white;
+        display: inline-block;
+        height: 56px;
+
+        /* Cho text ở giữa*/
+        line-height: 56px;
+        min-width: 170px;
+        text-decoration: none; /* xóa bỏ gjahc dưới dưới chân text ở link*/
+        /*transition: 0.3s background-color;*/
+    }
+
+    .btn-list li a:hover {
+        background-color: #00aeef;
+    }

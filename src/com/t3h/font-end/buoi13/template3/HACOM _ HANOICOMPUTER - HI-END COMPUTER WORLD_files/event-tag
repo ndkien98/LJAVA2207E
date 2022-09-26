@@ -1,0 +1,225 @@
+(function () {
+    function appendEvent(event, isGroupEvent = false) {
+        let newScript = document.createElement('script');
+        newScript.type = 'text/javascript';
+        newScript.innerHTML = `mePuzz("track", "${event}");`
+        document.body.appendChild(newScript);
+
+        if (!isGroupEvent) {
+<!--            let tomorrow = getDateExpires(1);-->
+<!---->
+<!--            let list_event_added = getCookie('MEPUZZ_LIST_EVENT');-->
+<!--            if (list_event_added) list_event_added = JSON.parse(list_event_added);-->
+<!--            else list_event_added = [];-->
+<!--            -->
+<!--            if (!list_event_added.includes(event)) {-->
+<!--                list_event_added.push(event);-->
+<!--                setCookie('MEPUZZ_LIST_EVENT', JSON.stringify(list_event_added), tomorrow);-->
+<!--            }-->
+
+            let list_event_added = localStorage.getItem('MEPUZZ_LIST_EVENT');
+            if (list_event_added) list_event_added = JSON.parse(list_event_added);
+            else list_event_added = [];
+
+            let event_date = localStorage.getItem("MEPUZZ_LIST_EVENT_EXPIRY");
+            let today = getEndDateString(new Date());
+            if (today !== event_date || event_date === null|| event_date.length === 0 || event_date === undefined) {
+                localStorage.setItem('MEPUZZ_LIST_EVENT_EXPIRY', today);
+                list_event_added = [];
+            }
+
+            if (!list_event_added.includes(event)) {
+                list_event_added.push(event);
+                localStorage.setItem('MEPUZZ_LIST_EVENT', JSON.stringify(list_event_added));
+            }
+
+            checkGroupEvent();
+        }
+    }
+
+    function setCookie(name, value, timeExpires) {
+        let expires = "";
+        if (timeExpires) {
+            expires = "; expires=" + timeExpires;
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        let nameEQ = name + "=";
+        let ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0)==' ')
+                c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0)
+                return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function getDateExpires(days) {
+        let day = new Date();
+        let dateExpires = new Date(day);
+        dateExpires.setDate(day.getDate() + parseInt(days));
+        dateExpires.setHours(0);
+        dateExpires.setMinutes(0);
+        dateExpires.setSeconds(0);
+
+        return dateExpires;
+    }
+
+    function getEndDateString(date) {
+        let pYear = date.getFullYear();
+        let pMonth = date.getMonth() + 1;
+        let pDate = date.getDate();
+        if (pMonth.toString().length === 1) pMonth = '0' + pMonth;
+        if (pDate.toString().length === 1) pDate = '0' + pDate;
+        return `${pYear}-${pMonth}-${pDate} 23:59:59`;
+    }
+
+    <!-- conditions -->
+    const contain = 'contain',
+        not_contain = 'not_contain',
+        equal = 'equal';
+
+    <!-- click -->
+    const click_id = 1,
+        click_class = 2,
+        click_tag_name = 3,
+        click_url = 4;
+
+    <!-- check exists click -->
+    let list_click_executed = [];
+    document.addEventListener('click', function(event) {
+        const elementId = event.target.id;
+        const elementClass = event.target.getAttribute('class');
+        const elementTagName = event.target.tagName.toLowerCase();
+        const elementUrl = event.target.getAttribute('href');
+            });
+
+    <!-- scroll -->
+    <!-- check exists scroll -->
+    let list_scroll_executed = [];
+    window.addEventListener('scroll', function() {
+                    if (!list_scroll_executed.includes('scroll_50%')) {
+                var windowScrollPercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
+
+                let scrollToPercent = parseInt('50');
+
+                if (windowScrollPercent >= scrollToPercent) {
+                    appendEvent('scroll_50%');
+                    list_scroll_executed.push('scroll_50%');
+                }
+
+                if (parseInt('50') === 100) {
+                    if (windowScrollPercent >= 99) {
+                        appendEvent('scroll_50%');
+                        list_scroll_executed.push('scroll_50%');
+                    }
+                }
+            }
+            });
+
+    function eventPageViewUrl() {
+        let url_current = decodeURI(window.location.href);
+        if (url_current) {
+            url_current = url_current.toLowerCase();
+            <!-- page url -->
+            
+            <!-- UTM -->
+                    }
+    }
+    eventPageViewUrl();
+
+    <!-- on page n seconds -->
+    let countSecondInterval;
+    function onPageNSeconds(reset = false) {
+        <!-- reset count seconds -->
+        if (reset) {
+            clearInterval(countSecondInterval);
+        }
+        let secondCurrent = 0;
+        countSecondInterval = setInterval(function() {
+            secondCurrent++;
+                    }, 1000);
+        <!-- clear interval on page -->
+        if (countSecondInterval) {
+            setTimeout(function() {
+                clearInterval(countSecondInterval);
+            }, parseInt('0') * 1000);
+        }
+    }
+    onPageNSeconds();
+
+    <!-- view n page -->
+    function eventViewNPage() {
+            }
+    eventViewNPage();
+
+    <!-- leave web -->
+    let list_leave_web_executed = [];
+    document.addEventListener('mouseleave', function() {
+            });
+
+    
+    function checkVisitor() {
+        let newVisitor = getCookie('MEPUZZ_NEW_VISITOR');
+        if (!newVisitor) { <!-- new visitor -->
+            let next_7_days = getDateExpires(7);
+            let list_new_visitor_executed = [];
+                        if (!list_new_visitor_executed.includes('new_visitor')) {
+                appendEvent('new_visitor');
+                list_new_visitor_executed.push('new_visitor');
+                
+                setCookie('MEPUZZ_NEW_VISITOR', true, next_7_days);
+            }
+                    }
+        else { <!-- visitor returning -->
+            let list_visitor_returning_executed = [];
+                    }
+    }
+    checkVisitor();
+
+    <!-- check scroll to element and element active -->
+    function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+    <!-- let list_element_visible_executed = []; -->
+        
+    function checkGroupEvent() {
+        let tomorrow = getDateExpires(1);
+
+        <!-- let list_event_added = getCookie('MEPUZZ_LIST_EVENT'); -->
+        let list_event_added = localStorage.getItem('MEPUZZ_LIST_EVENT');
+        if (list_event_added) list_event_added = JSON.parse(list_event_added);
+        else list_event_added = [];
+
+        let list_group_event_executed = getCookie('MEPUZZ_LIST_GROUP_EVENT_EXECUTED');
+        if (list_group_event_executed) list_group_event_executed = JSON.parse(list_group_event_executed);
+        else list_group_event_executed = [];
+
+            }
+
+    function checkUrlChange() {
+        if (window.location.href !== oldUrl) {
+            oldUrl = window.location.href;
+
+            list_scroll_executed = [];
+            eventPageViewUrl();
+            eventViewNPage();
+            list_leave_web_executed = [];
+            onPageNSeconds(true);
+            checkVisitor();
+        }
+    }
+
+    var oldUrl = window.location.href;
+    setInterval(checkUrlChange, 1000);
+})(window);

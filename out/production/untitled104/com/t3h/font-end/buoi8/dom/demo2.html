@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">                        <!--document node -->
+<head>                                  <!--element node-head -->
+    <meta charset="UTF-8">              <!--element node-meta -->
+    <title id="titleId">DOM in JavaScript</title>    <!--element node-title -->
+    <script src="index,js.js"></script>
+</head>
+<body>                                  <!--element node-body -->
+<!--HTML - JAVASCRIPT -->               <!--comment node -->
+<h1>                                    <!--element node-h1 -->
+    DOM HTML                            <!--text node -->
+</h1>
+<a href="https://t3h.edu.vn/"></a>      <!-- element-node-link-->
+<p>                                     <!-- element node-p-->
+    Xin chào các bạn                    <!--text-node -->
+</p>
+
+<h1 class="tieuDe nhom1">Thao tác với DOM thông qua Class</h1>
+<p class="nhom1">Nhiều phần tử có thể có cùng tên class</p>
+<div class="nhom1">Vì thế nó là getElements chứ không phải getElement</div>
+
+<script>
+    let x = document.getElementsByClassName("nhom1");
+    console.log(x);
+</script>
+
+<p>Nhắm đến Phần tử sử dụng Tag Name</p>
+<div class="test">Nó sẽ lấy tất cả các phần tử với thẻ tag đó</div>
+<p>Kết quả trả về giống như mảng. Sau đó ta có thể làm gì tùy thích</p>
+
+<script>
+    let tagName = document.getElementsByTagName("p");
+    console.log(tagName);
+</script>
+
+<!-- -->
+
+<!--Thay đổi các thành phần HTML -->
+<p id="message">Chào mừng các bạn đến với lập trình JavaScript căn bản!</p>
+
+<script>
+    let d1 = document.getElementById("message");
+    d1.outerHTML = "<h3 id='message_change'>Hello JS</h3>"; // Thay đổi outerHTML từ p sang h3
+    console.log(document.getElementById("message_change").outerHTML)
+</script>
+
+<!-- Thay đổi thuộc tính -->
+<h1 id="myH1">The Element Object</h1>
+<script>
+    let d2 = document.getElementById("myH1");
+    d2.className = "class-test"; // Thêm mới thuộc tính class
+    console.log(document.getElementById("myH1").className)
+</script>
+
+
+<!-- Thay đổi style -->
+<h1 id="s2">Thay đổi màu của header</h1>
+
+<script>
+    document.getElementById("s2").style.color = "red";
+</script>
+
+<!-- xóa bỏ (remove) các HTML elements và attributes -->
+<h1 id="demoRemove">element remove</h1>
+<script>
+    const element = document.getElementById("demoRemove");
+    element.remove();
+</script>
+
+<!-- thêm mới HTML elements và attributes -->
+<ul id="myList">
+    <li>Coffee</li>
+    <li>Tea</li>
+</ul>
+
+<p>Click "Append" to append an item to the end of the list:</p>
+
+<button onclick="myFunction()">Append</button>
+
+<script>
+    function myFunction() {
+
+// Create an "li" node:
+        const node = document.createElement("li");
+
+// Create a text node:
+        const textnode = document.createTextNode("Water");
+
+// Append the text node to the "li" node:
+        node.appendChild(textnode);
+
+// Append the "li" node to the list:
+        document.getElementById("myList").appendChild(node);
+    }
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        body{
+            /*color: #333;  */
+            font-family: Helvetica,sans-serif;
+            font-size: 16px;
+        }
+
+        /*layout */
+        /*Căn giữa*/
+        .content {
+            margin: 20px;
+            text-align: center;
+        }
+
+        /*Chỉnh khoảng cách*/
+        .logo{
+            margin-bottom: 15px;
+        }
+
+        .content h2{
+            /*Tăng size*/
+            font-size: 45px;
+            /*Không in đậm các chữ xong quanh*/
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+
+        .lead-text{
+            margin-bottom: 40px;
+        }
+
+    /*    Chỉnh 2 button*/
+        .btn-list li{
+            display: inline;
+            margin: 12px;
+        }
+
+    /*    Set màu */
+        .btn-list li a{
+            /*Màu chữ nề*/
+            background-color: #2d3032;
+
+        /*  config thành inline-block để set được chiều rộng và màu  */
+            color: white;
+            display: inline-block;
+            height: 50px;
+
+            box-sizing: border-box;
+            padding: 14px;
+            text-align: center;
+            min-width: 170px;
+            text-decoration: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <p class="logo"><img src="img.jpg" style="width: 190px;height: 100px"></p>
+        <h2>Best <strong>Shared Hosting</strong> Company</h2>
+        <p class="lead-text">With this responsive landing page template, you can promote your all hosting, domain and email services.</p>
+        <ul class="btn-list">
+            <li>
+                <a href="https://t3h.edu.vn/">View Plans</a>
+            </li>
+            <li>
+                <a href="https://t3h.edu.vn/">All Features</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+<!--
+
+
+    phân tích: html
+        * Công thức chung
+            - để gom nhóm nội dung lên dùng thẻ <section> hoặc <div>
+                + vì mỗi thẻ khác sẽ có các tính chất riêng, với 2 thẻ này sẽ ko có tính chất ì riêng áp đặt vào element bên trong
+                + thuận lợi cho việc chia layout sau này
+            - tiêu đề dùng các thẻ <hx>
+            - image thì dùng thẻ img
+            - đoạn văn dùng thẻ <p>
+            - danh sách <ul>, <li>, nếu cần có thứ tự 1,2 thì dùng <ol>, <li>
+                 trong bài này 2 button kia yêu cầu click vào sẽ link đến
+                    page khác lên nếu dùng button thì phải xử lý thêm js => dùng ul, li
+            - lấy thông tin thì dùng thẻ from
+            - phải đặt tên class, id để dễ control, nếu ko sẽ rất rối loạn
+
+-->

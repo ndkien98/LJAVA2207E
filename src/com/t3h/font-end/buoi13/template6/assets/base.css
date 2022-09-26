@@ -3,6 +3,13 @@
     --white-color: #ffff;
     --black-color: #0000;
     --text-color: #333;
+
+    /* bat dau dung khi xay dung phan search */
+    /* --header-height:120px;
+    --navbar-height: 34px; */
+
+    /* tinh toan chieu cao cua phan search */
+    /* --header-with-search-height: calc(var(var(--header-height) - var(var(--navbar-height))));    */
 }
 
 *{

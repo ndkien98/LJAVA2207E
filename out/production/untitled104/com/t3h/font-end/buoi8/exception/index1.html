@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+  try {
+    // Khối lệnh có thể xảy ra lỗi
+  }
+  catch (ex) {
+    // Khối lệnh thực thi nếu có lỗi
+  }
+  finally {
+    // Khối lệnh này sẽ được thực thi
+    // cho dù có lỗi hay không lỗi
+  }
+
+  // ex1
+  document.write("<h2>Lập trình JavaScript căn bản</h2>");
+  try {
+    document.write("<p>Câu lệnh try-catch trong JavaScript</p>");
+    alertrt("<p>Câu lệnh này có lỗi nè</p>"); //Cố tình để câu lệnh này có lỗi nè
+    document.write("<p>Câu lệnh này đúng nè</p>");
+  } catch (ex) {
+    document.write("<p>Nếu trong try có lỗi thì dòng này sẽ chạy nè</p>");
+    document.write(
+            "<p>Dòng này thông báo lỗi nè: " + ex.toString() + "</p>"
+    );
+  } finally {
+    document.write("<p>Cái này nó luôn chạy nè</p>");
+  }
+
+
+  // ex2
+  try {
+      // Cố tình log một biến chưa được khai báo
+      console.log(c);
+  } catch (ex) {
+      // In ra màn hình console thông báo lỗi
+      console.log(ex.message);
+  } finally {
+      console.log("Không quan tâm lỗi hay không");
+  }
+
+
+  // ex3
+
+  document.write("<h2>Lập trình JavaScript căn bản</h2>");
+  try {
+      document.write("<p>Câu lệnh try-catch trong JavaScript</p>");
+      throw "Lỗi này được tạo ra"; // Ném ra một lỗi nè
+      alertrt("<p>Câu lệnh này có lỗi nè</p>"); // Cố tình để câu lệnh này có lỗi nè
+      document.write("<p>Câu lệnh này đúng nè</p>");
+  } catch (ex) {
+      document.write("<p>Nếu trong try có lỗi thì dòng này sẽ chạy nè</p>");
+      document.write(
+          "<p>Dòng này thông báo lỗi nè: " + ex.toString() + "</p>"
+      );
+  } finally {
+      document.write("<p>Cái này nó luôn chạy nè</p>");
+  }
+
+
+</script>
+
+
+<h3>Nhập một số dương nhỏ hơn 100</h3>
+<input type="text" id="number" />
+<button type="button" id="btn">Kiểm tra</button>
+<p id="message"></p>
+<script>
+    // Tạo hàm kiểm tra dữ liệu nhập vào
+    function checkInput() {
+        // Lấy số mà người dùng vừa nhập
+        var number = document.getElementById("number").value;
+        // Xử lý lỗi với try catch và throw
+        try {
+            if (number == "") {
+                throw "Bạn chưa nhập giá trị";
+            } else if (isNaN(number)) {
+                throw "Giá trị bạn nhập không phải là một số";
+            } else if (number < 1) {
+                throw "Giá trị vừa nhập nhỏ hơn giá trị cho phép";
+            } else if (number >= 100) {
+                throw "Giá trị vừa nhập lớn hơn giá trị cho phép";
+            }
+            document.getElementById("message").innerHTML = "Hợp lệ";
+        } catch (ex) {
+            document.getElementById("message").innerHTML = ex;
+        }
+    }// Xử lý sự kiện click nút
+    document.getElementById("btn").addEventListener("click", checkInput);
+
+
+
+
+</script>
+
+
+</body>
+</html>
