@@ -1,0 +1,73 @@
+.header{
+    height: 120px;
+
+    background-image: linear-gradient(0,#ff2500,#ff520c);
+}
+
+/* header__navbar la cha len dua len tren */
+.header__navbar{
+    /* cho 2 the ul cung dong */
+    display: flex;
+
+    /* cho 2 the ul cach xa nhau */
+    justify-content: space-between;
+}
+
+.header__navbar-list{
+    /* mat dau cham cua li */
+    list-style: none;
+
+    /* reset pading cua li */
+    padding-left: 0;
+    margin-top: 4px;
+}
+
+.header__navbar-item{
+    margin: 0 8px;
+
+    /* khi tao gach thang thi them position vao thang cha */
+    position: relative;
+}
+
+
+/* display: list-item; tuong tu disblay block khong cung 1 hang  */
+.header__navbar-item,
+.header__navbar-item-link{
+    /* cho li cung dong tren header */
+    display: inline-block;
+
+    font-size: 1.3rem;
+    /* var(--white-color); goi bien white-color o base css phan root */
+    color: var(--white-color);
+
+    /* bo gach chan cua the */
+    text-decoration: none;
+
+    font-weight: 300;
+}
+
+.header__navbar-item--strong{
+    font-weight: 400 !important;
+}
+
+/* tao gach thang dung */
+.header__navbar-item--separate::after{
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 1px solid #FB9086;
+    height: 12px;
+    right: -9px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.header__navbar-item:hover,
+.header__navbar-item-link:hover{
+    /* khi di chuot vao ti doi mau chu */
+    color: rgb(255, 255, 255, 0.7);
+
+    /* di chuat vao dien ban tay */
+    cursor: pointer;
+}

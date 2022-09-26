@@ -1,0 +1,63 @@
+/*khai bao bien*/
+:root {
+    --white-color: #ffff;
+    --black-color: #0000;
+    --text-color: #333;
+}
+
+*{
+    /*cho bon khac ke thua border-box */
+    box-sizing: inherit;
+    margin-top: 0;
+}
+
+html {
+    /*62.5%; font-size: 100% tuong tu 16px, font-size: 62.5% tuong duong 10px */
+    font-size: 62.5%;
+
+    /*tuong tu 16px cho chieu cao chu*/
+    line-height: 1.6rem;
+
+    /*trong luc Roboto chua tai duoc se duoc su dung font sans-serif*/
+    font-family: 'Roboto', sans-serif;
+
+    box-sizing: border-box;
+}
+
+/*p {*/
+/*    !*tuong duong 100% font-size *!*/
+/*    font-size: 1rem;*/
+/*}*/
+
+.grid {
+    /*neu truong hop man hinh > 1200px thi ep no ve 1200 */
+    width: 1200px;
+    /*neu man hinh < 1200 thi ep ve max < 1200*/
+    max-width: 100%;
+
+    /*can giua khoi*/
+    margin: 0 auto;
+}
+
+/*khong muon su dung  width: 1200px; thi hem class nay */
+.grid__full-width {
+    width: 100%;
+}
+
+/*nhung the nam trong class nay se nam cung tren hang ngang vi  display: flex;, */
+.grid__row {
+    display: flex;
+    /*tong do dai cac thang con > thi xuong dong*/
+    flex-wrap: wrap;
+}
+
+/*thu tu lam */
+
+/*1) lam 1 the chua toan bo web*/
+/*2) header */
+/*3) container chua noi dung body   */
+/*4) footer*/
+/*   */
+/*lam khung cac phan chinh roi chia nho ra thanh tung phan trong mi layout*/
+/*lam tu ngoai cung -> tu tren xuong -> tu ngoai vao cua tung thanh phan 1   */
+
