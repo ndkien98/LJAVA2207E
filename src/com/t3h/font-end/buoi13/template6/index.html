@@ -64,7 +64,19 @@ nav la con cua header -> header__navbar(tuong tu ELEMENT),
 
                 <!-- tao ra vung chua o search -->
                 <div class="header__search">
+                    <input type="text" class="header__search-input" placeholder="Nhập vào để tìm kiếm">
+                
+                    <div class="header__search-select">
+                        
+                        <span class="header__search-select-lable">
+                            Trong shop
+                        </span>
+                        <i class="header__search-select-icon fa-solid fa-angle-down"></i>
+                    </div>
 
+                    <button class="header__search-btn">
+                        <i class="header__search-btn-icon fas fa-search"></i>
+                    </button>
                 </div>
 
                 <!-- tao gi hang -->
@@ -76,8 +88,36 @@ nav la con cua header -> header__navbar(tuong tu ELEMENT),
         </div>
     </header>
 
-    <div class="container">
-
+    <div class="app__container">
+        <div class="grid">
+            <div class="grid__row">
+                <div class="grid__column-2">
+                    <nav class="category">
+                        <h3 class="category__heading">
+                            <i class="category__heading-icon fa-solid fa-list"></i>
+                            Danh mục
+                        </h3>
+            
+                        <ul class="category-list">
+                            <li class="category-item category-item--active">
+                                <a href="#" class="category-item__link">Trang điểm mặt</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#" class="category-item__link">Trang điểm môi</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#" class="category-item__link">Trang điểm mắt</a>
+                            </li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+                <div class="grid__column-10">
+                    
+                </div>
+            </div>
+        </div>
+        
     </div>
 
     <footer class="footer">

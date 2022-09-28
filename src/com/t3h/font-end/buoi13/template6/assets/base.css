@@ -3,7 +3,7 @@
     --white-color: #ffff;
     --black-color: #0000;
     --text-color: #333;
-
+    --primary-color: #ff520c
     /* bat dau dung khi xay dung phan search */
     /* --header-height:120px;
     --navbar-height: 34px; */
@@ -56,6 +56,10 @@ html {
     display: flex;
     /*tong do dai cac thang con > thi xuong dong*/
     flex-wrap: wrap;
+
+    /* khi lam contant san pham, cach de chia ra colimn*/
+    margin-left: -12px;
+    margin-right: -12px;
 }
 
 /*thu tu lam */
@@ -68,3 +72,28 @@ html {
 /*lam khung cac phan chinh roi chia nho ra thanh tung phan trong mi layout*/
 /*lam tu ngoai cung -> tu tren xuong -> tu ngoai vao cua tung thanh phan 1   */
 
+/* ba cap grid {
+    row{
+        column
+        column
+    },
+    row {
+        column
+        colum
+    }
+} */
+
+/* test */
+.grid__column-2{
+
+    margin-left: 12px;
+    margin-right: 12px;
+    width: 16.6667%;
+}
+
+.grid__column-10{
+    margin-left: 12px;
+    margin-right: 12px;
+    /* (100 / 12) * 10 */
+    width: 83.3334%; 
+}

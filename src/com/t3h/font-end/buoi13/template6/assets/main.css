@@ -95,6 +95,11 @@
     flex: 1;
     height: 40px;
     background-color: var(--white-color);
+    border-radius: 3px;
+
+    /* bat dau lam chu Trong Shop cua search */
+    display: flex;
+    align-items: center;
 }
 
 .header__card{
@@ -107,4 +112,149 @@
     font-size: 2.4rem;
     color: var(--white-color);   
     margin-top: 9px;
+}
+
+/* css o input cua search */
+.header__search-input{
+    /* ban dau la width: 100%; nhung khi lam phan Trong shop doi thanh  flex: 1 */
+    flex: 1;
+    height: 100%;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    padding: 0 16px;
+    border-radius: 3px;
+}
+
+/* dau danh giua trong shop va input */
+.header__search-select {
+    border-left: 1px solid #ccc;
+    padding-left: 16px;
+}
+
+.header__search-select-lable{
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+/* css icon trong shop */
+.header__search-select-icon{
+    font-size: 1.4rem;
+    color: #a9a1a1;
+    margin: 0 16px;
+    
+    /* di chuyen icon  */
+    position: relative;
+    top: 2px;
+}
+
+/* lam icon search */
+
+/* lam btn search */
+.header__search-btn{
+    background-color: red;
+    border: none;
+
+    height: 34px;
+    border-radius: 3px;
+    width: 60px;
+    margin-right: 3px;
+    outline: none;
+}
+
+.header__search-btn-icon{
+    font-size: 1.4rem;
+    color: var(--white-color);
+}
+.header__search-btn:hover{
+    background-color: #cf6363;
+    cursor: pointer;
+}
+
+/* bat dau lam phan container */
+/* chia cac cot thanh 12 column
+coi taon bo chieu rong bang 100% => 1 cot bang 100% / 12 */
+
+
+/* css phan danh muc */
+
+.app__container{
+    background-color: #f5f5f5;
+}
+
+.category{
+    background-color: var(--white-color);
+    border-radius: 2px;
+}
+
+.category__heading{
+    font-size: 1.8rem;
+    color: var(--text-color);
+    padding: 12px 16px;
+
+    /* tao gach ben duoi tu danhmuc */
+    border-bottom: 1px solid #e1e0e0;
+}
+
+.category__heading-icon{
+    font-size: 1.4rem;
+    margin-right: 5px;
+
+    /* thay do vi tri icon */
+    position: relative;
+    top: -1px;
+}
+
+/* css phan gia tri danh muc ben duoi */
+.category-list{
+    padding:0 0 8px 0;
+    list-style: none;
+
+    /* day vao cho bang chu danh muc */
+    padding-left: 10px;
+}
+
+.category-item{
+
+}
+
+.category-item--active .category-item__link{
+    color: var(--primary-color);
+}
+
+.category-item__link{
+    
+    color: var(--text-color);
+    text-decoration: none;
+
+    font-size: 1.6rem;
+    padding: 8px 16px;
+
+    /* them cai nay vao no moi cach nhau tren duoi duoc */
+    display: block;
+
+    /* them cai nay moi tao cai tao hinh tam giac duoc */
+    position: relative;
+}
+
+.category-item__link:hover{
+    
+    color: #ff520c;
+}
+
+/* tao hinh tam giac cho thang menu active */
+.category-item--active .category-item__link::before{
+    /* chinh vi tri */
+    position: absolute;
+    top: 50%;
+    left: 7px;
+
+    content: "";
+    border: 4px solid;
+
+    /* khi tang kich thuoc border cua the a len khong bi lech mui ten cung luon dung giua */
+    transform: translateY(calc(-50% - 1px));
+
+    /* cach lam hinh tam giac */
+    border-color: transparent transparent transparent var(--primary-color);
 }
