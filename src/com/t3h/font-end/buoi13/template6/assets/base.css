@@ -60,6 +60,8 @@ html {
     /* khi lam contant san pham, cach de chia ra colimn*/
     margin-left: -12px;
     margin-right: -12px;
+
+    padding-top: 2%;
 }
 
 /*thu tu lam */
@@ -95,5 +97,6 @@ html {
     margin-left: 12px;
     margin-right: 12px;
     /* (100 / 12) * 10 */
-    width: 83.3334%; 
+    width: 79.3334%; 
 }
+

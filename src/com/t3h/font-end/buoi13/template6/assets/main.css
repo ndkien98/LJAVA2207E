@@ -258,3 +258,25 @@ coi taon bo chieu rong bang 100% => 1 cot bang 100% / 12 */
     /* cach lam hinh tam giac */
     border-color: transparent transparent transparent var(--primary-color);
 }
+
+
+/* home sort + filter  */
+
+.btn {
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6rem;
+
+    background-color: var(--white-color);
+}
